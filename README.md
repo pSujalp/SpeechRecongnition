@@ -30,6 +30,17 @@ Just run the main.py or `python3 main.py` in terminal with _VENV_ **ENABLED**
 
 `sudo apt-get install python3` 
 
+`pip install transformers torch`
+
+`pip install numpy pyqt5 pyqtgraph pyaudio wave faster-whisper`
+
+
+`sudo apt install ffmpeg`  # Debian/Ubuntu
+
+`brew install ffmpeg`  # macOS
+
+`pip install -U openai-whisper`
+
 [Python Download link](https://www.python.org/)
 
     
