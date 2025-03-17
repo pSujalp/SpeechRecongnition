@@ -153,6 +153,7 @@ class PlayerApp(QWidget):
         if text:
             emotion = detect_emotion(text) or "neutral"
             e= emotion.capitalize()
+            self.input_field.clear()
             self.text_display.append(f"User voice message: {text}     (***{e}***)")
     
         if e=="Anger" or e=="anger" or e=="ANGER":
