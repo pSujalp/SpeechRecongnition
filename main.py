@@ -153,9 +153,13 @@ class PlayerApp(QWidget):
         if text:
             emotion = detect_emotion(text) or "neutral"
             e= emotion.capitalize()
-            self.text_display.append(f"User: {text}    (***{e}***)")
+            self.text_display.append(f"User voice message: {text}     (***{e}***)")
+    
+        if e=="Anger" or e=="anger" or e=="ANGER":
+            self.change_gif("upset")
+        else :
+            self.change_gif(get_gif_for_emotion(emotion))
             self.input_field.clear()
-            
             self.change_gif(get_gif_for_emotion(emotion))
             #print(get_gif_for_emotion(emotion))
             gc.collect()
@@ -203,7 +207,7 @@ class PlayerApp(QWidget):
         e= (emotion).capitalize()
         self.text_display.append(f"User voice message: {text}     (***{e}***)")
         
-        if e=="Anger":
+        if e=="Anger" or e=="anger" or e=="ANGER":
             self.change_gif("upset")
         else :
             self.change_gif(get_gif_for_emotion(emotion))
