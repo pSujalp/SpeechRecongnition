@@ -1,46 +1,79 @@
-# Speech Recongnition and Expression Recongnition
+# Speech Recognition & Expression Recognition
 
-## Speech Recongnition and Expression Recongnition using Fallout Vault Boy 
+## Using Fallout Vault Boy 🎙️😃
 
- ![Image](https://github.com/user-attachments/assets/ca0a7983-9900-4b7b-bc29-781279701413)
+![Vault Boy](https://github.com/user-attachments/assets/ca0a7983-9900-4b7b-bc29-781279701413)
 
-## Installaton 
+---
 
-`gh repo clone pSujalp/SpeechRecongnition`
+## 🚀 Installation
 
-`cd SpeechRecongnition`
+Clone the repository:
+```bash
+git clone https://github.com/pSujalp/SpeechRecongnition.git
 
-`python -m venv myenv`
-    
-    
-`myenv\Scripts\activate` # Windows
+cd SpeechRecongnition
+```
 
+Set up a virtual environment:
+```bash
+python -m venv myenv
+```
 
-`source myenv/bin/activate` # Linux and MacOS
+Activate the virtual environment:
+- **Windows**:
+  ```bash
+  myenv\Scripts\activate
+  ```
+- **Linux & macOS**:
+  ```bash
+  source myenv/bin/activate
+  ```
 
-    
-`pip -r requirements.txt`
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-Just run the main.py or `python3 main.py` in terminal with _VENV_ **ENABLED** 
+Run the application:
+```bash
+python main.py  # or python3 main.py
+```
+Ensure your **virtual environment** is **enabled** before running.
 
-### Prerequisite
+---
 
+## 📌 Prerequisites
 
-`pip install python3`
+Ensure you have Python installed:
+```bash
+pip install python3  # For Python package manager
+sudo apt-get install python3  # Debian/Ubuntu
+```
 
-`sudo apt-get install python3` 
+Install required libraries:
+```bash
+pip install transformers torch numpy pyqt5 pyqtgraph pyaudio wave faster-whisper
+```
 
-`pip install transformers torch`
+Install FFmpeg:
+- **Debian/Ubuntu**:
+  ```bash
+  sudo apt install ffmpeg
+  ```
+- **macOS**:
+  ```bash
+  brew install ffmpeg
+  ```
 
-`pip install numpy pyqt5 pyqtgraph pyaudio wave faster-whisper`
+Install OpenAI Whisper:
+```bash
+pip install -U openai-whisper
+```
 
+🔗 **[Download Python](https://www.python.org/)**
 
-`sudo apt install ffmpeg`  # Debian/Ubuntu
+---
 
-`brew install ffmpeg`  # macOS
+Now you're all set! 🎉 Enjoy Speech & Expression Recognition with Vault Boy! 🚀
 
-`pip install -U openai-whisper`
-
-[Python Download link](https://www.python.org/)
-
-    
