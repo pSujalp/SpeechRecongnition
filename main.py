@@ -13,6 +13,25 @@ from faster_whisper import WhisperModel
 from debugging import get_gif_for_emotion,detect_emotion
 import gc
 
+
+import os
+
+# Get the directory of the current script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Traverse up to find the repository root
+while current_dir != os.path.dirname(current_dir):  # Stop at the root
+    assets_path = os.path.join(current_dir, "Assets")
+    if os.path.isdir(assets_path):  # Check if "Assets" exists
+        ASSET_FOLDER = assets_path
+        break
+    current_dir = os.path.dirname(current_dir)
+else:
+    ASSET_FOLDER = None  # If not found
+
+print("ASSET_FOLDER =", ASSET_FOLDER)
+
+
 class AudioRecorder(QThread):
     recorded = pyqtSignal(str)
     spectrum_data = pyqtSignal(np.ndarray)
@@ -92,12 +111,12 @@ class PlayerApp(QWidget):
         gc.collect()
 
         
-        font_id = QFontDatabase.addApplicationFont("/home/pujal/Documents/SpeechRecongnition/Assets/FSEX300.ttf")
+        font_id = QFontDatabase.addApplicationFont(ASSET_FOLDER+"/FSEX300.ttf")
         font_family = QFontDatabase.applicationFontFamilies(font_id)[0] if font_id != -1 else "Arial"
         custom_font = QFont(font_family, 26)
         
         self.gif_label = QLabel(self)
-        self.movie = QMovie("/home/pujal/Documents/SpeechRecongnition/Assets/Hello.gif")
+        self.movie = QMovie(ASSET_FOLDER+"/Hello.gif")
         self.gif_label.setMovie(self.movie)
         self.movie.start()
         self.gif_label.setFixedSize(400, 400)
@@ -110,7 +129,7 @@ class PlayerApp(QWidget):
         
         self.record_button = QPushButton("Start Recording")
         self.record_button.setStyleSheet("background-color: #5CE65C; color: black; border-radius: 5px; padding: 10px;")
-        self.record_button.setIcon(QIcon("/home/pujal/Documents/SpeechRecongnition/Assets/mic.png"))
+        self.record_button.setIcon(QIcon(ASSET_FOLDER+"/mic.png"))
         self.record_button.clicked.connect(self.toggle_recording)
         self.record_button.setIconSize(QSize(64, 64))  
 
@@ -167,8 +186,8 @@ class PlayerApp(QWidget):
 
     def change_gif(self,emotion):
         #print("to be changed"+emotion)
-        path="/home/pujal/Documents/SpeechRecongnition/Assets/"
-        final_path="/home/pujal/Documents/SpeechRecongnition/Assets/"+emotion
+        path=ASSET_FOLDER
+        final_path=ASSET_FOLDER+"/"+emotion
         #print("Final path"+final_path)
 
         label_width = self.gif_label.width()
