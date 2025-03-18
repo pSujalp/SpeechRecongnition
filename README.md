@@ -5,7 +5,42 @@
 ![Vault Boy](https://github.com/user-attachments/assets/ca0a7983-9900-4b7b-bc29-781279701413)
 
 ---
+## 📌 Prerequisites
 
+Ensure you have Python installed:
+```bash
+pip install python3  # For Python package manager
+sudo apt-get install python3  # Debian/Ubuntu
+```
+
+Install required libraries:
+```bash
+pip install transformers torch numpy pyqt5 pyqtgraph pyaudio wave faster-whisper
+pip install faster-whisper
+```
+
+Install FFmpeg:
+- **Debian/Ubuntu**:
+  ```bash
+  sudo apt install ffmpeg
+  ```
+- **macOS**:
+  ```bash
+  brew install ffmpeg
+  ```
+
+Install OpenAI Whisper:
+```bash
+pip install -U openai-whisper
+```
+
+🔗 **[Download Python](https://www.python.org/)**
+
+---
+
+Now you're all set! 🎉 Enjoy Speech & Expression Recognition with Vault Boy! 🚀
+
+---
 ## 🚀 Installation
 
 Clone the repository:
@@ -42,38 +77,4 @@ python main.py  # or python3 main.py
 Ensure your **virtual environment** is **enabled** before running.
 
 ---
-
-## 📌 Prerequisites
-
-Ensure you have Python installed:
-```bash
-pip install python3  # For Python package manager
-sudo apt-get install python3  # Debian/Ubuntu
-```
-
-Install required libraries:
-```bash
-pip install transformers torch numpy pyqt5 pyqtgraph pyaudio wave faster-whisper
-```
-
-Install FFmpeg:
-- **Debian/Ubuntu**:
-  ```bash
-  sudo apt install ffmpeg
-  ```
-- **macOS**:
-  ```bash
-  brew install ffmpeg
-  ```
-
-Install OpenAI Whisper:
-```bash
-pip install -U openai-whisper
-```
-
-🔗 **[Download Python](https://www.python.org/)**
-
----
-
-Now you're all set! 🎉 Enjoy Speech & Expression Recognition with Vault Boy! 🚀
 
