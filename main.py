@@ -131,7 +131,7 @@ class PlayerApp(QWidget):
         self.record_button.setStyleSheet("background-color: #5CE65C; color: black; border-radius: 5px; padding: 10px;")
         self.record_button.setIcon(QIcon(ASSET_FOLDER+"/mic.png"))
         self.record_button.clicked.connect(self.toggle_recording)
-        self.record_button.setIconSize(QSize(64, 64))  
+        self.record_button.setIconSize(QSize(8, 8))  
 
         self.text_display = QTextEdit()
         self.text_display.setReadOnly(True)
@@ -173,7 +173,7 @@ class PlayerApp(QWidget):
             emotion = detect_emotion(text) or "neutral"
             e= emotion.capitalize()
             self.input_field.clear()
-            self.text_display.append(f"User voice message: {text}     (***{e}***)")
+            self.text_display.append(f"User Typed message: {text}     (***{e}***)")
     
         if e=="Anger" or e=="anger" or e=="ANGER":
             self.change_gif("upset")
